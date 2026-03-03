@@ -327,7 +327,7 @@ pip install -r requirements.txt
 python run_evaluation.py \
   --url your_urls(可以使用多个且用空格隔开) \
   --api-key sk-your-api-key \
-  --model gpt-5(部署服务的模型名) \
+  --model gpt-5(待测试的模型名) \
   --model-name gpt-5(存储结果的别名) \
   --datasets FIRE（或者FIRE_SCENE）\
   --per-url-max-workers 64 \
@@ -343,6 +343,7 @@ python run_evaluation.py --help
 数据集以及部分请求参数被配置在`config/datasets.yaml`中，例如：
 ```yaml
 # 可以自行更改评分模型的部署信息（其中FIRE为考题集、FIRE_SCENE为真实场景）
+# judge_model在 https://huggingface.co/FIRE-Bench/FIRE-RM 获取
 datasets:
   FIRE_SCENE:
     name: "FIRE_SCENE"
@@ -361,7 +362,7 @@ defaults:
   extra_body: {}
 ```
 
-> 注：鉴于 FIRE—真实金融场景任务集 涉及企业隐私与合规要求，相关数据暂不对外公开。
+> 注：鉴于 FIRE—真实金融场景任务集 涉及企业隐私与合规要求，相关数据暂不对外公开。如有金融场景类问题的评测需求，请通过以下方式与我们联系：maxiaoxiao01@duxiaoman.com
 
 ## 6. 声明
 
